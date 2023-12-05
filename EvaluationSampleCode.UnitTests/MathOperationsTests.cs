@@ -9,7 +9,7 @@ namespace EvaluationSampleCode.UnitTests
         public void Add_NumberOneSumByNumberTwo_ReturnsCorrectResult(int numberOne, int numberTwo, int expectedSum)
         {
             // Arrange
-            var mathOperations = new MathOperations();
+            MathOperations mathOperations = new();
 
             // Act
             int actualSum = mathOperations.Add(numberOne, numberTwo);
@@ -24,7 +24,7 @@ namespace EvaluationSampleCode.UnitTests
         public void Divide_NumberOneDivideByNumberTwo_ReturnsCorrectResult(int numberOne, int numberTwo, float expectedQuotient)
         {
             // Arrange
-            var mathOperations = new MathOperations();
+            MathOperations mathOperations = new();
 
             // Act
             float actualQuotient = mathOperations.Divide(numberOne, numberTwo);
@@ -39,7 +39,7 @@ namespace EvaluationSampleCode.UnitTests
         public void Divide_NumberDivideBy0_ReturnsArgumentException(int number)
         {
             // Arrange
-            var mathOperations = new MathOperations();
+            MathOperations mathOperations = new();
 
             // Act & Assert
             Assert.ThrowsException<ArgumentException>(() => mathOperations.Divide(number, 0));
@@ -51,7 +51,7 @@ namespace EvaluationSampleCode.UnitTests
         public void GetOddNumbers_LimitIs10_ReturnsCorrectOddNumbers(int limit, int[] expectedOddNumbers)
         {
             // Arrange
-            var mathOperations = new MathOperations();
+            MathOperations mathOperations = new();
 
             // Act
             var actualOddNumbers = mathOperations.GetOddNumbers(limit);
@@ -66,7 +66,7 @@ namespace EvaluationSampleCode.UnitTests
         public void GetOddNumbers_LimitIsNegative_ReturnsArgumentException(int limit)
         {
             // Arrange
-            var mathOperations = new MathOperations();
+            MathOperations mathOperations = new();
 
             // Act & Assert
             Assert.ThrowsException<ArgumentException>(() => mathOperations.GetOddNumbers(limit));

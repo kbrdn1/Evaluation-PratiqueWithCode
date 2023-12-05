@@ -7,8 +7,8 @@ namespace EvaluationSampleCode.UnitTests
         public void CanBeCancelledBy_UserIsAdmin_ReturnsTrue()
         {
             // Arrange
-            var user = new User { IsAdmin = true };
-            var reservation = new Reservation(user);
+            User user = new() { IsAdmin = true };
+            Reservation reservation = new(user);
 
             // Act
             var result = reservation.CanBeCancelledBy(user);
@@ -21,8 +21,8 @@ namespace EvaluationSampleCode.UnitTests
         public void CanBeCancelledBy_UserIsMadeBy_ReturnsTrue()
         {
             // Arrange
-            var user = new User();
-            var reservation = new Reservation(user);
+            User user = new();
+            Reservation reservation = new(user);
 
             // Act
             var result = reservation.CanBeCancelledBy(user);
@@ -35,9 +35,9 @@ namespace EvaluationSampleCode.UnitTests
         public void CanBeCancelledBy_UserIsNotAdminAndNotMadeBy_ReturnsFalse()
         {
             // Arrange
-            var user = new User();
-            var otherUser = new User();
-            var reservation = new Reservation(otherUser);
+            User user = new();
+            User otherUser = new();
+            Reservation reservation = new(otherUser);
 
             // Act
             var result = reservation.CanBeCancelledBy(user);
